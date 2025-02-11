@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HGZY Clone</title>
+    <title>TRX WIN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,6 +22,7 @@
 
         .container {
             padding: 10px;
+            padding-bottom: 70px; /* নেভিগেশন বারের জন্য প্যাডিং যোগ করা হয়েছে */
         }
 
         .menu {
@@ -108,13 +109,22 @@
             padding: 10px;
             border: none;
             background: none;
+            display: flex;
+            flex-direction: column; /* কলামে সাজানো */
+            align-items: center; /* সেন্টার করা */
+            gap: 5px; /* লোগো এবং টেক্সটের মধ্যে ফাঁকা */
+        }
+
+        nav button img {
+            width: 20px; /* বাটনের লোগোর সাইজ */
+            height: 20px; /* বাটনের লোগোর সাইজ */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>HGZY</h1>
+        <h1>TRX WIN</h1>
         <div class="icons">
             <span class="notification"></span>
             <span class="download"></span>
@@ -182,11 +192,26 @@
     </div>
 
     <nav>
-        <button>Home</button>
-        <button>Activity</button>
-        <button>Promotion</button>
-        <button>Wallet</button>
-        <button>Account</button>
+        <button>
+            <img src="https://i.ibb.co.com/wZvCC4Wd/20176.png" alt="Home Logo">
+            Home
+        </button>
+        <button>
+            <img src="https://i.ibb.co.com/GvB64Xd9/10252905.png" alt="Activity Logo">
+            Activity
+        </button>
+        <button>
+            <img src="https://i.ibb.co.com/6784httb/5412794.png" alt="Promotion Logo">
+            Promotion
+        </button>
+        <button>
+            <img src="https://i.ibb.co.com/TBcDWKwc/60484.png" alt="Wallet Logo">
+            Wallet
+        </button>
+        <button>
+            <img src="https://i.ibb.co.com/0V2xG2LH/1077114.png" alt="Account Logo">
+            Account
+        </button>
     </nav>
 
     <script>
