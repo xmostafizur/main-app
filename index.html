@@ -87,6 +87,7 @@
             align-items: center;
             justify-content: space-between;
             flex-direction: row-reverse; /* লোগো ডান পাশে রাখার জন্য */
+            cursor: pointer; /* ক্লিকযোগ্য দেখানোর জন্য */
         }
 
         .lottery-item img {
@@ -172,7 +173,7 @@
 
         <h2>Lottery</h2>
         <div class="lottery-section">
-            <div class="lottery-item">
+            <div class="lottery-item" id="wingo">
                 <img src="https://ossimg.crhhh.com/bdtgame/lotterycategory/lotterycategory_20230725010909y1nq.png" alt="Win Go Logo">
                 Win Go
             </div>
@@ -215,7 +216,10 @@
     </nav>
 
     <script>
-        // কোনো JavaScript ফাংশন যুক্ত নেই, কারণ লগইন অপশন সরানো হয়েছে।
+        // Wingo লটারি আইটেমে ক্লিক ইভেন্ট যোগ করা হয়েছে
+        document.getElementById('wingo').addEventListener('click', function() {
+            window.location.href = 'https://xmostafizur.github.io/Wingo/';
+        });
     </script>
 
 </body>
