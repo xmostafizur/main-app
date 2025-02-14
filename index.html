@@ -209,7 +209,7 @@
             <img src="https://i.ibb.co.com/TBcDWKwc/60484.png" alt="Wallet Logo">
             Wallet
         </button>
-        <button>
+        <button id="accountButton">
             <img src="https://i.ibb.co.com/0V2xG2LH/1077114.png" alt="Account Logo">
             Account
         </button>
@@ -219,6 +219,11 @@
         // Wingo লটারি আইটেমে ক্লিক ইভেন্ট যোগ করা হয়েছে
         document.getElementById('wingo').addEventListener('click', function() {
             window.location.href = 'https://xmostafizur.github.io/Wingo/';
+        });
+
+        // Account বাটনে ক্লিক ইভেন্ট যোগ করা হয়েছে
+        document.getElementById('accountButton').addEventListener('click', function() {
+            window.location.href = 'account.html';
         });
     </script>
 
