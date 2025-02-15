@@ -120,6 +120,27 @@
             width: 20px; /* বাটনের লোগোর সাইজ */
             height: 20px; /* বাটনের লোগোর সাইজ */
         }
+
+        /* এনিমেশন স্টাইল */
+        .alert-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff4444;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .alert-message.show {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -215,6 +236,9 @@
         </button>
     </nav>
 
+    <!-- এনিমেশন বার্তা -->
+    <div class="alert-message" id="alertMessage">Domain problem please solve</div>
+
     <script>
         // Wingo লটারি আইটেমে ক্লিক ইভেন্ট যোগ করা হয়েছে
         document.getElementById('wingo').addEventListener('click', function() {
@@ -225,6 +249,45 @@
         document.getElementById('accountButton').addEventListener('click', function() {
             window.location.href = 'account.html';
         });
+
+        // অন্যান্য লটারি আইটেমে ক্লিক ইভেন্ট যোগ করা হয়েছে
+        const lotteryItems = document.querySelectorAll('.lottery-item');
+        lotteryItems.forEach(item => {
+            if (item.id !== 'wingo') {
+                item.addEventListener('click', function() {
+                    showAlert();
+                });
+            }
+        });
+
+        // অন্যান্য গেম কার্ডে ক্লিক ইভেন্ট যোগ করা হয়েছে
+        const gameCards = document.querySelectorAll('.game-card');
+        gameCards.forEach(card => {
+            if (!card.textContent.includes('Original')) {
+                card.addEventListener('click', function() {
+                    showAlert();
+                });
+            }
+        });
+
+        // নেভিগেশন বাটনে ক্লিক ইভেন্ট যোগ করা হয়েছে
+        const navButtons = document.querySelectorAll('nav button');
+        navButtons.forEach(button => {
+            if (!button.querySelector('img').alt.includes('Account')) {
+                button.addEventListener('click', function() {
+                    showAlert();
+                });
+            }
+        });
+
+        // এনিমেশন বার্তা দেখানোর ফাংশন
+        function showAlert() {
+            const alertMessage = document.getElementById('alertMessage');
+            alertMessage.classList.add('show');
+            setTimeout(() => {
+                alertMessage.classList.remove('show');
+            }, 3000); // 3 সেকেন্ড পর বার্তা লুকানো
+        }
     </script>
 
 </body>
